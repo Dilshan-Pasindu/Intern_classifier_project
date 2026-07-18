@@ -3,7 +3,11 @@ import pandas as pd
 
 MODEL_PATH = "models/best_model.joblib"
 SCALER_PATH = "models/scaler.joblib"
-FEATURE_ORDER = ["feature_1", "feature_2", "feature_3"]
+
+FEATURE_ORDER = [
+    "age", "sex", "cp", "trestbps", "chol", "fbs", "restecg",
+    "thalach", "exang", "oldpeak", "slope", "ca", "thal",
+]
 
 
 def predict_one(record: dict) -> dict:
@@ -14,7 +18,7 @@ def predict_one(record: dict) -> dict:
     row_scaled = scaler.transform(row)
 
     prediction = model.predict(row_scaled)[0]
-    result = {"prediction": prediction}
+    result = {"prediction": int(prediction)}
 
     if hasattr(model, "predict_proba"):
         proba = model.predict_proba(row_scaled)[0]
@@ -24,5 +28,9 @@ def predict_one(record: dict) -> dict:
 
 
 if __name__ == "__main__":
-    sample = {"feature_1": 0, "feature_2": 0, "feature_3": 0}
+    sample = {
+        "age": 58, "sex": 1, "cp": 0, "trestbps": 130, "chol": 260,
+        "fbs": 0, "restecg": 1, "thalach": 140, "exang": 1,
+        "oldpeak": 2.4, "slope": 1, "ca": 1, "thal": 3,
+    }
     print(predict_one(sample))
