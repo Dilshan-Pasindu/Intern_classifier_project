@@ -23,13 +23,13 @@ def inspect_dataset(df: pd.DataFrame) -> None:
 
     print("\nMissing values per column:")
     missing = df.isnull().sum()
-    print(missing[missing > 0] if missing.sum() > 0 else "  None found ✅")
+    print(missing[missing > 0] if missing.sum() > 0 else "  None found")
 
     if TARGET_COL in df.columns:
         print(f"\nClass balance ('{TARGET_COL}' column):")
         print(df[TARGET_COL].value_counts())
     else:
-        print(f"\n⚠️ Warning: '{TARGET_COL}' not found in columns: {list(df.columns)}")
+        print(f"\nWarning : '{TARGET_COL}' not found in columns: {list(df.columns)}")
 
     print("\nFirst 5 rows:")
     print(df.head())

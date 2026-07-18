@@ -1,8 +1,3 @@
-"""
-evaluate.py
-Reports accuracy, precision, recall, F1, and a confusion matrix plot.
-"""
-
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -48,4 +43,4 @@ def _plot_confusion_matrix(cm, model_name, save_path):
     plt.tight_layout()
     plt.savefig(save_path, dpi=150)
     plt.close()
-    print(f"Saved confusion matrix to: {save_path}")
+    print(f"Saved confusion matrix to : {save_path}")

@@ -7,7 +7,7 @@ SCALER_PATH = "models/scaler.joblib"
 
 st.title("Heart Disease Risk Predictor")
 st.write("Enter patient details to estimate heart disease risk.")
-st.caption("This demo uses the trained heart-disease model saved in the project.")
+st.caption("This demo uses the trained heart-disease model saved in the project. ")
 
 age = st.slider("Age", 20, 90, 50)
 sex = st.selectbox("Sex", ["Male", "Female"])

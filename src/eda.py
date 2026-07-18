@@ -45,7 +45,7 @@ def run_eda(df: pd.DataFrame, output_dir: str = "outputs"):
     # Target correlation ranking - which features relate most to the target
     if TARGET_COL in numeric_df.columns:
         target_corr = numeric_df.corr()[TARGET_COL].drop(TARGET_COL).sort_values(key=abs, ascending=False)
-        print("\nFeatures most correlated with target:")
+        print("\nFeatures most correlated with target :")
         print(target_corr)
 
 

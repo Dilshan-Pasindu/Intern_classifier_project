@@ -33,4 +33,4 @@ if __name__ == "__main__":
         "fbs": 0, "restecg": 1, "thalach": 140, "exang": 1,
         "oldpeak": 2.4, "slope": 1, "ca": 1, "thal": 3,
     }
-    print(predict_one(sample))
+    print(predict_one(sample)) #print the prediction result for the sample input
